@@ -10,11 +10,25 @@ const personalMovieDB = {
   genres: [],
   privat: false,
 };
-const a = prompt("Останній фільм ти бачив?", "Леон");
-const b = prompt("Оцінка фільма?", "1-5");
-const c = prompt("Останній фільм ти бачив?", "Леон");
-const d = prompt("Оцінка фільма?", "1-5");
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+for (let i = 0; i < 2; i++) {
+  const a = prompt("Останній фільм ти бачив?", "Леон");
+  const b = prompt("Оцінка фільма?", "1-5");
+  if (a != null && b != null && a != " " && b != " " && a.length < 50) {
+    personalMovieDB.movies[a] = b;
+  } else {
+    console.log(error);
+    i--;
+  }
+}
+if (personalMovieDB.count < 10) {
+  console.log("Malo");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+  console.log(Norm);
+} else if (personalMovieDB.count >= 30) {
+  console.log("kinoman");
+} else {
+  console.log("error");
+}
+
 console.log(personalMovieDB);
